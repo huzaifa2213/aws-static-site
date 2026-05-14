@@ -22,7 +22,8 @@ jobs:
 
       - name: Upload files to S3
         run: aws s3 sync . s3://huzaifa-static-site-22 --delete
-            - name: Invalidate CloudFront cache
+      
+      - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E302R93D8VN3TY \
